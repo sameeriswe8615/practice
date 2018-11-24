@@ -1,0 +1,7 @@
+
+Get-EventLog -LogName System -After (Get-Date).AddHours(-24)
+
+$files = Get-ChildItem -Path C:\Windows\Temp -Recurse
+$folders = $files | Where-Object {$_.PSIsContainer}
+Write-Host $files.Count $folders.Count
+
